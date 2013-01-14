@@ -1,3 +1,6 @@
 \contentsline {section}{\numberline {1}Envirement Setting }{1}{section.1}
 \contentsline {section}{\numberline {2}knitr}{2}{section.2}
 \contentsline {section}{\numberline {3}한글 윈도우 문제}{2}{section.3}
+\contentsline {section}{\numberline {4}분석 예제: 개인 서비스 요금 정보 데이터 분석 }{3}{section.4}
+\contentsline {subsection}{\numberline {4.1}데이터 요약}{4}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}코드설명}{4}{subsection.4.2}

@@ -1,5 +1,5 @@
 % !Rnw weave = knitr
-% !TEX TS-program = pdflatex
+% !TEX TS-program = xelatex
 % !TEX encoding = UTF-8 Unicode
 
 
@@ -179,9 +179,98 @@ compile_pdf <- \hlfunctioncall{function}(filename, typeset = \hlstring{"pdflatex
 많은 R사용자들은 R을 좀더 쾌적하게 사용하기 위해서 리눅스를 사용하라고 이야기 한다. 이는 바로 이런 인코딩문제와 더불어 R이 리눅스를 기반으로 개발되고 있기 때문이다. 하지만 이 문서가 왜 윈도우를 기반으로 하고 있느냐고 묻는다면 국내 R 사용자 대부분이 윈도우를 사용하고 있기 때문이라고 말씀드리고 싶다. 
 
 
+\section{분석 예제: 개인 서비스 요금 정보 데이터 분석 }
+
+\begin{itemize}
+  \item \url{http://data.seoul.go.kr}의 공공 데이터 중 `개인 서비스 요금 정보'데이터 활용.
+  \item 착한 가게 여부에 따른 가격 차이가 있는지 분석
+  \item 각 서비스 종류에 따른 가격 분포 확인 
+  \item 각 지역에 따른 가격 분포 확인 
+\end{itemize}
+
+\subsection{데이터 요약} 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+ps <- \hlfunctioncall{read.csv}(\hlstring{"개인서비스요금정보.csv"}, fileEncoding = \hlstring{"UTF-8"})
+\hlfunctioncall{summary}(ps)
+\end{alltt}
+\begin{verbatim}
+##        BSSH_NM       BSSH_SEQ_NO     INDUTY_CODE_SE     INDUTY_DESC   
+##  김밥천국  :  966   Min.   :   194   Min.   :1100   한식      :18853  
+##  김밥나라  :  211   1st Qu.:164170   1st Qu.:1110   미용업    : 7733  
+##  전주식당  :  194   Median :237485   Median :1160   기타음식업: 5536  
+##  김가네    :  141   Mean   :222852   Mean   :1257   기타서비스: 4259  
+##  크린토피아:  118   3rd Qu.:272389   3rd Qu.:1310   세탁업    : 3465  
+##  김밥사랑  :  112   Max.   :375950   Max.   :1999   중식      : 3078  
+##  (Other)   :49863                                   (Other)   : 8681  
+##        TLPHON_NO_CN         AR         DONG_CODE_SE       LEGALDONG_NM  
+##  020000000   :  175   0      :15092   Min.   :1.11e+08   상계동 : 3029  
+##  0200000000  :  143          :13287   1st Qu.:2.01e+08   봉천동 : 2363  
+##  0000-0000   :   69   33     : 1372   Median :3.51e+08   신월동 : 2126  
+##  02  00000000:   68   30     : 1288   Mean   :3.72e+08   신당동 : 1585  
+##  00          :   49   20     :  957   3rd Qu.:5.61e+08   목동   : 1536  
+##  02  000 0000:   36   66     :  725   Max.   :7.41e+08   신정동 : 1312  
+##  (Other)     :51065   (Other):18884                      (Other):39654  
+##    ADRES_CN2     PRDLST_CODE_SE        PRDLST_DESC          PC        
+##  173-1  :   74   Min.   :2110   미용료 (커트): 4142   Min.   :     0  
+##  506    :   67   1st Qu.:2170   김치찌개 백반: 3732   1st Qu.:  4500  
+##  17     :   63   Median :2260   미용료 (파마): 3594   Median :  6000  
+##  24     :   61   Mean   :2375   된장찌개 백반: 3395   Mean   : 10351  
+##  1      :   49   3rd Qu.:2630   삼겹살       : 2984   3rd Qu.: 11000  
+##  70     :   44   Max.   :2930   냉면(물)     : 2576   Max.   :450000  
+##  (Other):51247                  (Other)      :31182                   
+##     CHCK_MD       PRGN_BSSH_YN
+##  Min.   :201212    : 4690     
+##  1st Qu.:201212   N:46117     
+##  Median :201212   Y:  798     
+##  Mean   :201231               
+##  3rd Qu.:201212               
+##  Max.   :201301               
+## 
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+\subsection{코드설명}
+% latex table generated in R 2.15.2 by xtable 1.7-0 package
+% Mon Jan 14 18:42:31 2013
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{rll}
+  \hline
+ & 코드명 & 한글명 \\ 
+  \hline
+1 & BSSH\_NM & 업소명 \\ 
+  2 & BSSH\_SEQ\_NO & 업소일련 \\ 
+  3 & INDUTY\_CODE\_SE & 업종코드 \\ 
+  4 & INDUTY\_DESC & 업종 \\ 
+  5 & TLPHON\_NO\_CN & 전화번호 \\ 
+  6 & AR & 면적(m\verb|^|2) \\ 
+  7 & DONG\_CODE\_SE & 동코드 \\ 
+  8 & LEGALDONG\_NM & 동명 \\ 
+  9 & ADRES\_CN2 & 주소 \\ 
+  10 & PRDLST\_CODE\_SE & 품목코드 \\ 
+  11 & PRDLST\_DESC & 품목 \\ 
+  12 & PC & 가격 \\ 
+  13 & CHCK\_MD & 점검일자 \\ 
+  14 & PRGN\_BSSH\_YN & 착한가게여부 \\ 
+   \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+
+
+
+
+
 
 
 \bibliographystyle{jss}
+\newpage
 \bibliography{heewon}
 
 \end{document}

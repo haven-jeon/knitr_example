@@ -1,5 +1,5 @@
 % !Rnw weave = knitr
-% !TEX TS-program = pdflatex
+% !TEX TS-program = xelatex
 % !TEX encoding = UTF-8 Unicode
 
 
@@ -112,9 +112,36 @@ compile_pdf("foo.Rnw")
 많은 R사용자들은 R을 좀더 쾌적하게 사용하기 위해서 리눅스를 사용하라고 이야기 한다. 이는 바로 이런 인코딩문제와 더불어 R이 리눅스를 기반으로 개발되고 있기 때문이다. 하지만 이 문서가 왜 윈도우를 기반으로 하고 있느냐고 묻는다면 국내 R 사용자 대부분이 윈도우를 사용하고 있기 때문이라고 말씀드리고 싶다. 
 
 
+\section{분석 예제: 개인 서비스 요금 정보 데이터 분석 }
+
+\begin{itemize}
+  \item \url{http://data.seoul.go.kr}의 공공 데이터 중 `개인 서비스 요금 정보'데이터 활용.
+  \item 착한 가게 여부에 따른 가격 차이가 있는지 분석
+  \item 각 서비스 종류에 따른 가격 분포 확인 
+  \item 각 지역에 따른 가격 분포 확인 
+\end{itemize}
+
+\subsection{데이터 요약} 
+<<read_data>>=
+ps <- read.csv("개인서비스요금정보.csv", fileEncoding="UTF-8")
+summary(ps)
+@
+
+\subsection{코드설명}
+<<show_field,echo=FALSE,results='asis'>>=
+한글명 <- c("업소명", "업소일련", "업종코드", "업종", "전화번호", "면적(m^2)", "동코드", "동명", "주소", "품목코드", "품목", "가격", "점검일자", "착한가게여부")
+코드명 <- names(ps)
+xtable(data.frame(코드명, 한글명))
+@
+
+
+
+
+
 
 
 \bibliographystyle{jss}
+\newpage
 \bibliography{heewon}
 
 \end{document}
