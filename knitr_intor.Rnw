@@ -123,7 +123,7 @@ compile_pdf("foo.Rnw")
 
 \subsection{데이터 요약} 
 <<read_data>>=
-ps <- read.csv("개인서비스요금정보.csv", fileEncoding="UTF-8")
+ps <- read.csv("personal_services.csv", fileEncoding="UTF-8")
 summary(ps)
 @
 
