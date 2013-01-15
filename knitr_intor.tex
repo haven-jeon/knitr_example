@@ -189,53 +189,34 @@ compile_pdf <- \hlfunctioncall{function}(filename, typeset = \hlstring{"pdflatex
 \end{itemize}
 
 \subsection{데이터 요약} 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-ps <- \hlfunctioncall{read.csv}(\hlstring{"개인서비스요금정보.csv"}, fileEncoding = \hlstring{"UTF-8"})
-\hlfunctioncall{summary}(ps)
-\end{alltt}
-\begin{verbatim}
-##        BSSH_NM       BSSH_SEQ_NO     INDUTY_CODE_SE     INDUTY_DESC   
-##  김밥천국  :  966   Min.   :   194   Min.   :1100   한식      :18853  
-##  김밥나라  :  211   1st Qu.:164170   1st Qu.:1110   미용업    : 7733  
-##  전주식당  :  194   Median :237485   Median :1160   기타음식업: 5536  
-##  김가네    :  141   Mean   :222852   Mean   :1257   기타서비스: 4259  
-##  크린토피아:  118   3rd Qu.:272389   3rd Qu.:1310   세탁업    : 3465  
-##  김밥사랑  :  112   Max.   :375950   Max.   :1999   중식      : 3078  
-##  (Other)   :49863                                   (Other)   : 8681  
-##        TLPHON_NO_CN         AR         DONG_CODE_SE       LEGALDONG_NM  
-##  020000000   :  175   0      :15092   Min.   :1.11e+08   상계동 : 3029  
-##  0200000000  :  143          :13287   1st Qu.:2.01e+08   봉천동 : 2363  
-##  0000-0000   :   69   33     : 1372   Median :3.51e+08   신월동 : 2126  
-##  02  00000000:   68   30     : 1288   Mean   :3.72e+08   신당동 : 1585  
-##  00          :   49   20     :  957   3rd Qu.:5.61e+08   목동   : 1536  
-##  02  000 0000:   36   66     :  725   Max.   :7.41e+08   신정동 : 1312  
-##  (Other)     :51065   (Other):18884                      (Other):39654  
-##    ADRES_CN2     PRDLST_CODE_SE        PRDLST_DESC          PC        
-##  173-1  :   74   Min.   :2110   미용료 (커트): 4142   Min.   :     0  
-##  506    :   67   1st Qu.:2170   김치찌개 백반: 3732   1st Qu.:  4500  
-##  17     :   63   Median :2260   미용료 (파마): 3594   Median :  6000  
-##  24     :   61   Mean   :2375   된장찌개 백반: 3395   Mean   : 10351  
-##  1      :   49   3rd Qu.:2630   삼겹살       : 2984   3rd Qu.: 11000  
-##  70     :   44   Max.   :2930   냉면(물)     : 2576   Max.   :450000  
-##  (Other):51247                  (Other)      :31182                   
-##     CHCK_MD       PRGN_BSSH_YN
-##  Min.   :201212    : 4690     
-##  1st Qu.:201212   N:46117     
-##  Median :201212   Y:  798     
-##  Mean   :201231               
-##  3rd Qu.:201212               
-##  Max.   :201301               
-## 
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
+
+% Table created by StarGazer v.2.0.1 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
+% Date and time: Tue, Jan 15, 2013 - 15:07:05
+\begin{table}[htb] \centering 
+  \caption{개인 서비스 요금 정보 숫자 데이터 요약} 
+\footnotesize 
+
+\begin{tabular}{@{\extracolsep{5pt}}l c c c c c } 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Statistic & \multicolumn{1}{c}{\textit{N}} & \multicolumn{1}{c}{\textit{Mean}} & \multicolumn{1}{c}{\textit{St. Dev.}} & \multicolumn{1}{c}{\textit{Min}} & \multicolumn{1}{c}{\textit{Max}} \\ 
+\hline \\[-1.8ex] 
+BSSH\_SEQ\_NO & 51,605 & 222,852.000 & 93,030.000 & 194 & 375,950 \\ 
+INDUTY\_CODE\_SE & 51,605 & 1,257.000 & 227.300 & 1,100 & 1,999 \\ 
+DONG\_CODE\_SE & 51,605 & 371,657,568.000 & 203,500,658.000 & 110,515,101 & 740,700,106 \\ 
+PRDLST\_CODE\_SE & 51,605 & 2,375.000 & 232.000 & 2,110 & 2,930 \\ 
+PC & 51,605 & 10,351.000 & 13,257.000 & 0 & 450,000 \\ 
+CHCK\_MD & 51,605 & 201,231.000 & 36.270 & 201,212 & 201,301 \\ 
+\hline \\[-1.8ex] 
+\normalsize 
+\end{tabular} 
+\end{table} 
 
 
-\subsection{코드설명}
+
+
 % latex table generated in R 2.15.2 by xtable 1.7-0 package
-% Mon Jan 14 18:42:31 2013
+% Tue Jan 15 15:07:05 2013
 \begin{table}[ht]
 \begin{center}
 \begin{tabular}{rll}
@@ -258,6 +239,58 @@ ps <- \hlfunctioncall{read.csv}(\hlstring{"개인서비스요금정보.csv"}, fi
   14 & PRGN\_BSSH\_YN & 착한가게여부 \\ 
    \hline
 \end{tabular}
+\caption{필드명 설명}
+\end{center}
+\end{table}
+% latex table generated in R 2.15.2 by xtable 1.7-0 package
+% Tue Jan 15 15:07:05 2013
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{rlrrll}
+  \hline
+ & BSSH\_NM & BSSH\_SEQ\_NO & INDUTY\_CODE\_SE & INDUTY\_DESC & TLPHON\_NO\_CN \\ 
+  \hline
+1 & 왕짜장 & 232343 & 1120 & 중식 &  815-4575 \\ 
+  2 & 왕짜장 & 232343 & 1120 & 중식 &  815-4575 \\ 
+  3 & 왕짜장 & 232343 & 1120 & 중식 &  815-4575 \\ 
+  4 & SBS노래방 & 166594 & 1900 & 기타서비스 &  813-5331 \\ 
+   \hline
+\end{tabular}
+\caption{데이터 헤더(1)}
+\end{center}
+\end{table}
+% latex table generated in R 2.15.2 by xtable 1.7-0 package
+% Tue Jan 15 15:07:05 2013
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{rlrllr}
+  \hline
+ & AR & DONG\_CODE\_SE & LEGALDONG\_NM & ADRES\_CN2 & PRDLST\_CODE\_SE \\ 
+  \hline
+1 & 0 & 590510101.00 & 노량진동 & 60-20 & 2280 \\ 
+  2 & 0 & 590510101.00 & 노량진동 & 60-20 & 2270 \\ 
+  3 & 0 & 590510101.00 & 노량진동 & 60-20 & 2260 \\ 
+  4 &  & 590510101.00 & 노량진동 & 116-2 & 2580 \\ 
+   \hline
+\end{tabular}
+\caption{데이터 헤더(2)}
+\end{center}
+\end{table}
+% latex table generated in R 2.15.2 by xtable 1.7-0 package
+% Tue Jan 15 15:07:05 2013
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{rlrrl}
+  \hline
+ & PRDLST\_DESC & PC & CHCK\_MD & PRGN\_BSSH\_YN \\ 
+  \hline
+1 & 탕수육 & 15000 & 201212 & N \\ 
+  2 & 짬뽕 & 5000 & 201212 & N \\ 
+  3 & 자장면 & 3500 & 201212 & N \\ 
+  4 & 노래방 이용료 & 15000 & 201212 & N \\ 
+   \hline
+\end{tabular}
+\caption{데이터 헤더(3)}
 \end{center}
 \end{table}
 
@@ -270,7 +303,7 @@ ps <- \hlfunctioncall{read.csv}(\hlstring{"개인서비스요금정보.csv"}, fi
 
 
 \bibliographystyle{jss}
-\newpage
+\clearpage
 \bibliography{heewon}
 
 \end{document}

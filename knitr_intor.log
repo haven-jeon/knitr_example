@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=latex 2013.1.2)  14 JAN 2013 18:43
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/W32TeX) (format=latex 2013.1.2)  15 JAN 2013 13:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -675,29 +675,35 @@ bt/m/n/10.95/ae ^^@\LUC/utbt/m/n/10.95/d4 \\LUC/utbt/m/n/10.95/d6 ^^D \LUC/utbt
 [3]
 LaTeX Font Info:    Font shape `LUC/utbt/bx/n' in size <12> not available
 (Font)              Font shape `LUC/utbt/b/n' tried instead on input line 191.
-Package color Info: Redefining color shadecolor on input line 193.
- [4] (./knitr_intor.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 276.
- [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 276.
+
+Overfull \hbox (32.60844pt too wide) in paragraph at lines 249--259
+ [] 
+ []
+
+[4] [5] (./knitr_intor.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 309.
+ [6
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 309.
  (./knitr_intor.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 276.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 276.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 309.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 309.
 Package rerunfilecheck Info: File `knitr_intor.out' has not changed.
-(rerunfilecheck)             Checksum: C38CCB84FF9E39B7FE429CFCD62C1BB9;308.
+(rerunfilecheck)             Checksum: FA34061D891C875A5131D830CACD8B35;255.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 276.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 309.
  ) 
 Here is how much of TeX's memory you used:
- 6516 strings out of 493489
- 95203 string characters out of 3143920
+ 6471 strings out of 493489
+ 94526 string characters out of 3143920
  189575 words of memory out of 3000000
- 9635 multiletter control sequences out of 15000+200000
- 63353 words of font info for 220 fonts, out of 3000000 for 9000
+ 9612 multiletter control sequences out of 15000+200000
+ 56609 words of font info for 196 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  34i,9n,32p,1001b,480s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on knitr_intor.dvi (5 pages, 37160 bytes).
+Output written on knitr_intor.dvi (6 pages, 36920 bytes).

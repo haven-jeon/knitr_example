@@ -15,6 +15,7 @@
 <<setup, echo = FALSE, results= 'hide', message = FALSE>>=
 library(xtable)
 library(ggplot2)
+library(stargazer)
 #options(encoding="UTF-8")
 @
 
@@ -122,16 +123,19 @@ compile_pdf("foo.Rnw")
 \end{itemize}
 
 \subsection{데이터 요약} 
-<<read_data>>=
+<<read_data, echo=FALSE,results='asis'>>=
 ps <- read.csv("personal_services.csv", fileEncoding="UTF-8")
-summary(ps)
+stargazer(ps, title="개인 서비스 요금 정보 숫자 데이터 요약")
 @
 
-\subsection{코드설명}
+
 <<show_field,echo=FALSE,results='asis'>>=
 한글명 <- c("업소명", "업소일련", "업종코드", "업종", "전화번호", "면적(m^2)", "동코드", "동명", "주소", "품목코드", "품목", "가격", "점검일자", "착한가게여부")
 코드명 <- names(ps)
-xtable(data.frame(코드명, 한글명))
+xtable(data.frame(코드명, 한글명), caption="필드명 설명")
+xtable(ps[1:4,1:5],caption="데이터 헤더(1)")
+xtable(ps[1:4,6:10],caption="데이터 헤더(2)")
+xtable(ps[1:4,11:14],caption="데이터 헤더(3)")
 @
 
 
@@ -141,7 +145,7 @@ xtable(data.frame(코드명, 한글명))
 
 
 \bibliographystyle{jss}
-\newpage
+\clearpage
 \bibliography{heewon}
 
 \end{document}
